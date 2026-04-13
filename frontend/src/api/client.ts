@@ -27,7 +27,10 @@ export async function login(username: string, password: string): Promise<{ acces
   })
 
   if (!response.ok) {
-    throw new Error('Usuario o password incorrectos')
+    if (response.status === 401) {
+      throw new Error('Usuario o password incorrectos')
+    }
+    throw new Error(`Error del servidor (${response.status})`)
   }
 
   return response.json()

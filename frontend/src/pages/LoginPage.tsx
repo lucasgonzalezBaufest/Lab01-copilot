@@ -19,8 +19,9 @@ function LoginPage() {
       const data = await login(username, password)
       setToken(data.access_token)
       navigate('/bienvenida')
-    } catch {
-      setMessage({ text: 'Usuario o password incorrectos', type: 'error' })
+    } catch (err) {
+      const errorMessage = err instanceof Error ? err.message : 'Error al conectar con el servidor'
+      setMessage({ text: errorMessage, type: 'error' })
     } finally {
       setLoading(false)
     }

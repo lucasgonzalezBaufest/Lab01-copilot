@@ -24,9 +24,9 @@ function App() {
       })
 
       if (response.ok) {
-        setMessage({ text: `¡Bienvenido, ${username}!`, type: 'success' })
+        setMessage({ text: 'Inicio de sesión correcto', type: 'success' })
       } else {
-        setMessage({ text: 'Credenciales incorrectas', type: 'error' })
+        setMessage({ text: 'Usuario o password incorrectos', type: 'error' })
       }
     } catch {
       setMessage({ text: 'Error al conectar con el servidor', type: 'error' })
@@ -38,6 +38,11 @@ function App() {
   return (
     <div className="login-container">
       <div className="login-card">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/2/21/Logo_Baufest_PNG.png"
+          alt="Baufest Logo"
+          className="login-logo"
+        />
         <h1>Iniciar Sesión</h1>
         <form onSubmit={handleSubmit}>
           <div className="form-group">

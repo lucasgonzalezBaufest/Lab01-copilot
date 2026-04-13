@@ -6,7 +6,7 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: #000000;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -28,6 +28,12 @@ body {
   width: 100%;
   max-width: 400px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.login-logo {
+  display: block;
+  margin: 0 auto 20px;
+  max-width: 180px;
 }
 
 .login-card h1 {
